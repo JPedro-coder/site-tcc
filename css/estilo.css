@@ -1,0 +1,357 @@
+/*------------Layout-------------*/
+
+* {
+	margin:0;
+	padding:0;
+	scrollbar-width: none;
+}
+
+html, body,#home{
+	height: 100vh;
+	width: 100%;
+	margin: 0px;
+}
+
+/* Chrome, Edge e Safari */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+body {
+  scrollbar-width: none;
+}
+
+/* IE e Edge antigo */
+body {
+  -ms-overflow-style: none;
+}
+
+p{
+	text-align: justify;
+}
+
+
+.caixa1{
+	position: relative;
+	background-image: url(../imagens/pousada_montanhas.jpg);
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	
+}
+
+.caixa2{
+	position: relative;
+	background-image: url(../imagens/cachorro.jpg);
+	height:100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	padding: 10%;
+}
+
+
+#inicio{
+						
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		font-family: Helvetica,Arial,sans-serif;
+}		
+
+/*Barra de navegação---------------------*/
+
+nav.navbar-branco{
+
+	padding: 0px;
+	background: linear-gradient(to right,#BA8E7A,#D4C2AD, #EFDFCC, #D4C2AD ,#BA8E7A);
+	width: 100%;
+	background-repeat: repeat-x;
+	border-bottom: 2px solid #EFDFCC;
+	border-top: 2px solid #EFDFCC;
+	
+}
+
+#linha_branca{
+	padding: 10px 0px;
+	background: #8B1A1A;
+	border-bottom: 4px solid #BA8E7A;
+	text-align: center;
+	padding-top: 40px;
+}
+
+.despertar{
+
+	position: relative;
+	top: -60px;
+	font-family:'Chopin' ;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	color: #10421e;
+	background-color: rgba(187, 182, 182, 0.6); padding: 15px 15px; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	letter-spacing:1px;
+	display: block;
+}
+
+.navbar-light .navbar-nav  .nav-link{ /*define a cor do texto do menu*/
+	color: #943611;
+	font-weight: bold;
+	font-variant: inherit;
+	
+}
+
+.navbar-light .navbar-nav  .nav-link:hover{ 
+	color:	#7a96ba;
+}
+
+ .navbar-toggler{/*define a cor do botão menu*/
+	color: #943611;
+	border-color: #039e03;
+}
+
+/*---------------capa--------------*/
+
+.capa{
+	text-align: center;
+}
+
+.btn-custom{
+	color: rgb(214, 16, 16);
+	border-radius: 500px;
+	-webkit-border-radius:500px;
+	-moz-border-radius:500px;
+	text-transform: uppercase;
+	transition: single transition 0.6s, color 0.6s;
+	padding: 15px 30px;
+	margin-top: 50px;
+	
+}
+
+@font-face {
+	font-family:'Chopin' ;
+	src: url(../fontes/chopin_script/ChopinScript.otf) format('opentype') ;
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1{
+	font-family: cursive;
+	font-weight: 900;
+	letter-spacing: -0.04em;
+	margin-top: 60px;
+	margin-bottom: 10px;color: 	#00e00b;
+	
+}
+
+h2, h4{
+	font-weight: bold;
+}
+
+
+
+.navbar-light .navbar-nav .nav-link{
+	font-size: 20px;
+	padding-left: 14px;
+}
+
+/*-----------Estrutura para conteudos index------------*/
+
+#serviços{
+	
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+}
+
+.desenho{
+	color: black;
+	margin: 0 7px;
+	font-size: 20px;
+	font-style:initial;
+	
+}
+
+
+/*-----------Estrutura para conteudos index------------*/
+
+#brancoloc{
+
+	background-color: #FFFACD;
+	padding-top: 100px;
+	padding-bottom: 40px;
+}
+
+
+/*-----------------Rodapé----------------*/
+
+footer{
+
+	
+	background-image: linear-gradient(to right,#EFDFCC 7%, #D4C2AD ,#BA8E7A);
+	padding: 50px 0px 20px 0px;
+	position: relative;
+}
+
+footer h4{
+	color: #000;
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+
+footer .navbar-nav a{
+	color: white;
+	font-size: 0.8em;
+}
+
+footer .navbar-nav a:hover{
+	color: #D8BFD8;
+	text-decoration: none;
+}
+
+footer ul{
+	list-style: none;
+}
+
+footer ul li{
+	float: right;
+	margin: 0 7px;
+}
+
+
+/*-----Localização-------------*/
+
+ .saiba{
+	
+	color: #008080;
+	font-size: 3em;
+	border-bottom: 4px solid white;
+}
+
+/*-----suites-------------*/
+
+.suites{
+	color:#CD9B1D;
+	font-size: 2em;
+	padding-top: 
+
+	text-align center;
+	background: #8B1A1A;
+
+
+}
+
+ .ornamentosuites{
+
+ 	padding-bottom: 40px;
+
+ }
+
+.section {
+	padding: 60px 0;
+	background-color: #BA8E7A;
+}
+.section img {
+	width: 100%;
+	border-radius: 15px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.section h2 {
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+.section p {
+	font-size: 1.1rem;
+	line-height: 1.6;
+}
+
+.btn-reserva {
+	margin-top: 25px;
+	padding: 12px 30px;
+	border-radius: 30px;
+	text-align: center;
+}
+
+.secao1{
+	padding: 60px;
+}
+
+.carousel-inner img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 15px;
+	  margin-right: 80px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      min-height: 300px;
+	}
+
+.aval{
+	background-image: url(../imagens/cachorro.jpg);
+	border-bottom: 50px;
+	border-radius: 20px;
+	}
+
+
+	.suite-section {
+      padding: 60px 0;
+    }
+    .suite-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .carousel1 img {
+      border-radius: 15px;
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+#avaliacoes h2 {
+  padding-top: 40px; /* aumenta o espaço do topo */
+}
+
+#avaliacoes carrossel {
+  padding-bottom: 40px; /* aumenta o espaço do topo */
+}
+
+.aval{
+	padding-bottom: 40px;
+}
+
+.estrelas{
+	padding-top: 35px;
+}
+
+.encontre-nos{
+	padding-top: 4%;
+}
+
+.titulos_local{
+	color: #10421e;
+}
+
+.secao_encontrenos{
+background-color: #EFDFCC;
+}
+
+.btn_reserva{
+	color: #EFDFCC;
+	background-color: #008080;
+}
+
+.btn_reserva:hover{
+	background-color: aqua;
+}
+
+.footer_2025{
+	padding-top: 13px;
+}
+
+.img-cidade{
+	padding-left: 50px;
+}
