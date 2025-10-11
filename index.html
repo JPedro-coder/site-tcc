@@ -684,7 +684,7 @@
       if (checkin && checkout && checkout <= checkin) {
         event.preventDefault();
         event.stopPropagation();
-        alert('A data de check-out deve ser posterior à data de check-in.');
+        alert('A data de check-out deve ser posterior à data de check-in!');
       }
 
       form.classList.add('was-validated');
