@@ -84,10 +84,9 @@ nav.navbar-branco{
 }
 
 .despertar{
-
 	position: relative;
 	top: -60px;
-	font-family:'Chopin' ;
+	font-family:'Chopin';
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
@@ -101,16 +100,19 @@ nav.navbar-branco{
 	color: #943611;
 	font-weight: bold;
 	font-variant: inherit;
+	font-family: 'Poppins', sans-serif;
 	
 }
 
-.navbar-light .navbar-nav  .nav-link:hover{ 
-	color:	#7a96ba;
+/* Efeito ao passar o mouse */
+.navbar-nav .nav-link:hover {
+  color: #691a39; /* bege elegante */
+  transform: translateY(-2px);
 }
 
  .navbar-toggler{/*define a cor do botão menu*/
 	color: #943611;
-	border-color: #039e03;
+	border-color: #691a39;
 }
 
 /*---------------capa--------------*/
@@ -345,7 +347,8 @@ background-color: #EFDFCC;
 }
 
 .btn_reserva:hover{
-	background-color: aqua;
+	background-color: #691a39;
+	color: #EFDFCC;
 }
 
 .footer_2025{
@@ -354,4 +357,146 @@ background-color: #EFDFCC;
 
 .img-cidade{
 	padding-left: 50px;
+}
+
+
+.galeria-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f9fa;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.galeria-img {
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.galeria-img:hover,
+.galeria-img:focus {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  outline: 2px solid #BA8E7A;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 999;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-content {
+  max-width: 85%;
+  max-height: 80%;
+  border-radius: 12px;
+}
+
+.caption {
+  color: #f1f1f1;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* Botões */
+.close, .nav {
+  position: absolute;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close {
+  top: 25px;
+  right: 35px;
+}
+
+.nav.prev {
+  left: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav.next {
+  right: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.close:hover, .nav:hover {
+  color: #BA8E7A;
+}
+
+.titulo_quartos{
+	font-family: 'Cinzel Decorative', cursive;
+  font-size: 2rem;
+  color: #5C4033; /* tom terroso elegante */
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.titulo_h{
+	font-family: 'Cinzel Decorative', cursive;
+  color: #691a39; /* tom terroso elegante */
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.servico-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.servico-card i {
+  color: #BA8E7A;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.servico-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.servico-card:hover i {
+  color: #691a39;
+  transform: scale(1.1);
+}
+
+.servico-card h5 {
+  color: #4B2E05;
+}
+
+.servico-card p {
+  color: #7b5e42;
+  font-size: 0.95rem;
 }
