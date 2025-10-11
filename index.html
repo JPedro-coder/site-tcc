@@ -522,7 +522,7 @@
         <p class="text-center text-muted mb-5">Garanta sua hospedagem na <strong>Pousada Casa da Lua</strong> e viva uma experiência inesquecível!</p>
 
         <!-- Formulário -->
-        <form action="http://if0_40140852.infinityfreeapp.com/reserva.php" method="POST" class="row g-4 needs-validation" novalidate>
+        <form id="formReserva" method="POST" class="row g-4 needs-validation" novalidate>
           
           <!-- Nome -->
           <div class="col-md-6">
@@ -583,21 +583,59 @@
   </div>
 </section>
 
-<!-- Validação Bootstrap -->
 <script>
   (() => {
-    'use strict'
-    const forms = document.querySelectorAll('.needs-validation')
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
     Array.from(forms).forEach(form => {
       form.addEventListener('submit', event => {
         if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          event.preventDefault(); // Impede envio real
+
+          // Cria um overlay com animação para parecer "enviando..."
+          const overlay = document.createElement('div');
+          overlay.style.position = "fixed";
+          overlay.style.top = "0";
+          overlay.style.left = "0";
+          overlay.style.width = "100vw";
+          overlay.style.height = "100vh";
+          overlay.style.display = "flex";
+          overlay.style.alignItems = "center";
+          overlay.style.justifyContent = "center";
+          overlay.style.background = "rgba(255,255,255,0.9)";
+          overlay.style.backdropFilter = "blur(4px)";
+          overlay.style.fontSize = "1.2rem";
+          overlay.style.fontWeight = "600";
+          overlay.style.zIndex = "9999";
+          overlay.style.opacity = "0";
+          overlay.style.transition = "opacity 0.5s ease";
+
+          overlay.innerHTML = `
+            <div class="text-center">
+              <div class="spinner-border mb-3" role="status"></div>
+              <p>Processando sua reserva...</p>
+            </div>
+          `;
+
+          document.body.appendChild(overlay);
+
+          // Ativa a animação
+          setTimeout(() => {
+            overlay.style.opacity = "1";
+          }, 50);
+
+          // Redireciona suavemente
+          setTimeout(() => {
+            window.location.href = "reserva_confirmada.html";
+          }, 2000); // 2s para parecer real
         }
-        form.classList.add('was-validated')
-      }, false)
-    })
-  })()
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
 </script>
 
 <!-- Carrossel de Avaliações --> 
