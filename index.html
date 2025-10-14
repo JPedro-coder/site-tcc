@@ -85,7 +85,7 @@
 
         <div class="row">
           <div class="col-md-12">
-            <h1 class="display-1 despertar " >Seu despertar na natureza<br> começa aqui!</h1> 
+            <h1 class="display-1 despertar">Um novo lugar para você <br>chamar de lar</h1> 
           </div>
         </div> 
       </article>  
@@ -510,7 +510,6 @@
 <!-- Script -->
 <script src="pousada.js"></script>
 
-
        <!--formulário para reserva-->
 <section id="reserva" class="py-5" style="background: linear-gradient(180deg, #fdfdfd, #f7f7f7);">
   <div class="container">
@@ -704,6 +703,8 @@
   </div>
 </section>
 
+<script src="js/privacy-consent.js"></script>
+
 <!-- Script de Validação -->
 <script>
   (function () {
@@ -746,6 +747,27 @@
       </article><!--fim container-->
     </section><!--fim teste-->
   </main>        
+
+  <!-- Seção de Consentimento de Privacidade -->
+<section id="consent-section" aria-hidden="true">
+  <div id="consent-overlay" class="consent-overlay" tabindex="-1" aria-hidden="true"></div>
+
+  <div id="consent-dialog" class="consent-dialog" role="dialog" aria-modal="true" aria-labelledby="consent-title" hidden>
+    <button class="consent-close" aria-label="Fechar painel de consentimento">&times;</button>
+
+    <div class="consent-body">
+      <h3 id="consent-title">Política de Privacidade</h3>
+      <p id="consent-desc">
+        Antes de continuar, por favor leia e confirme que tomou ciência da nossa Política de Privacidade.
+      </p>
+
+      <div class="consent-actions">
+        <a href="privacidade.html" target="_blank" rel="noopener" class="btn btn-outline-secondary me-2">Ler Política</a>
+        <button id="consent-accept" class="btn btn-danger">Li e concordo</button>
+      </div>
+    </div>
+  </div>
+</section>
           
   <footer class="bg-dark text-center py-5"><!------- Início do Rodapé ----------->
       <div class="container">

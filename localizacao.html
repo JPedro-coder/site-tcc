@@ -150,6 +150,28 @@
     </section>
     <!-- Fim Seção Mapa -->
 
+   
+<!-- Seção de Consentimento de Privacidade -->
+<section id="consent-section" aria-hidden="true">
+  <div id="consent-overlay" class="consent-overlay" tabindex="-1" aria-hidden="true"></div>
+
+  <div id="consent-dialog" class="consent-dialog" role="dialog" aria-modal="true" aria-labelledby="consent-title" hidden>
+    <button class="consent-close" aria-label="Fechar painel de consentimento">&times;</button>
+
+    <div class="consent-body">
+      <h3 id="consent-title">Política de Privacidade</h3>
+      <p id="consent-desc">
+        Antes de continuar, por favor leia e confirme que tomou ciência da nossa Política de Privacidade.
+      </p>
+
+      <div class="consent-actions">
+        <a href="privacidade.html" target="_blank" rel="noopener" class="btn btn-outline-secondary me-2">Ler Política</a>
+        <button id="consent-accept" class="btn btn-danger">Li e concordo</button>
+      </div>
+    </div>
+  </div>
+</section>
+
   <footer class="bg-dark text-center py-5"><!------- Início do Rodapé ----------->
     <div class="container">
       <h5 class="mb-3">Siga-nos em nossas redes sociais</h5>
@@ -170,5 +192,6 @@
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/privacy-consent.js" defer></script>
   </body>
 </html>
