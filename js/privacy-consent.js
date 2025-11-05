@@ -1,24 +1,18 @@
 // js/privacy-consent.js
 document.addEventListener('DOMContentLoaded', () => {
   const DURATION_DAYS = 365;
+  const STORAGE_KEY = 'privacyConsent';
 
-  // elementos
   const overlay = document.getElementById('consent-overlay');
   const dialog = document.getElementById('consent-dialog');
   const acceptBtn = document.getElementById('consent-accept');
   const closeBtn = document.querySelector('.consent-close');
   const consentDaysSpan = document.getElementById('consent-days');
 
-  // checagem básica de elementos
   if (!overlay || !dialog || !acceptBtn || !closeBtn) {
-    console.error('Consent script: elementos não encontrados. Verifique IDs/classes no HTML.');
-    return;
+    // elementos essenciais não encontrados — apenas retorna (sem quebrar)
   }
 
-  // atualiza texto de dias
-  if (consentDaysSpan) consentDaysSpan.textContent = DURATION_DAYS;
-
-  // helpers
   function nowISO() { return new Date().toISOString(); }
 
   function hasValidConsent() {
@@ -28,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = JSON.parse(raw);
       if (!data || !data.accepted || !data.date) return false;
       const acceptedDate = new Date(data.date);
-      const daysPassed = (Date.now() - acceptedDate.getTime()) / (1000 * 60 * 60 * 24);
+      const daysPassed = (Date.now() - acceptedDate.getTime()) / (10 * 1);
       return daysPassed < DURATION_DAYS;
     } catch (err) {
       console.warn('Consent read error', err);
@@ -46,53 +40,53 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function openDialog() {
-    overlay.classList.add('open');
-    dialog.classList.add('open');
-    overlay.setAttribute('aria-hidden', 'false');
-    dialog.removeAttribute('hidden');
-    dialog.setAttribute('aria-hidden', 'false');
-    // foco no botão aceitar
-    setTimeout(() => acceptBtn.focus(), 100);
+    if (overlay) {
+      overlay.classList.add('open');
+      overlay.setAttribute('aria-hidden', 'false');
+      overlay.style.display = 'block';
+    }
+    if (dialog) {
+      dialog.classList.add('open');
+      dialog.removeAttribute('hidden');
+      dialog.setAttribute('aria-hidden', 'false');
+    }
+    setTimeout(() => { if (acceptBtn) acceptBtn.focus(); }, 120);
     trapFocus(dialog);
   }
 
   function closeDialog() {
-    overlay.classList.remove('open');
-    dialog.classList.remove('open');
-    overlay.setAttribute('aria-hidden', 'true');
-    dialog.setAttribute('hidden', 'true');
-    dialog.setAttribute('aria-hidden', 'true');
+    if (overlay) {
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden', 'true');
+      overlay.style.display = 'none';
+    }
+    if (dialog) {
+      dialog.classList.remove('open');
+      dialog.setAttribute('hidden', 'true');
+      dialog.setAttribute('aria-hidden', 'true');
+    }
     releaseFocusTrap();
   }
 
-  // ações
-  acceptBtn.addEventListener('click', () => {
-    saveConsent();
-    closeDialog();
-  });
-
-  closeBtn.addEventListener('click', () => {
-    closeDialog();
-  });
-
-  overlay.addEventListener('click', () => closeDialog());
+  acceptBtn && acceptBtn.addEventListener('click', () => { saveConsent(); closeDialog(); });
+  closeBtn && closeBtn.addEventListener('click', () => closeDialog());
+  overlay && overlay.addEventListener('click', () => closeDialog());
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      // fecha se aberto
-      if (overlay.classList.contains('open')) closeDialog();
+      if (overlay && overlay.classList.contains('open')) closeDialog();
     }
-    if (!overlay.classList.contains('open')) return;
+    if (!overlay || !overlay.classList.contains('open')) return;
     if (e.key === 'Tab') handleTabKey(e);
   });
 
-  // focus trap simples
   let focusable = [];
   let firstFocusable = null;
   let lastFocusable = null;
   let previousActive = null;
 
   function trapFocus(container) {
+    if (!container) return;
     previousActive = document.activeElement;
     focusable = Array.from(container.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'))
       .filter(el => el.offsetParent !== null);
@@ -109,33 +103,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function handleTabKey(e) {
-    if (focusable.length === 0) {
-      e.preventDefault();
-      return;
-    }
+    if (focusable.length === 0) { e.preventDefault(); return; }
     if (e.shiftKey) {
-      if (document.activeElement === firstFocusable) {
-        e.preventDefault();
-        lastFocusable.focus();
-      }
+      if (document.activeElement === firstFocusable) { e.preventDefault(); lastFocusable.focus(); }
     } else {
-      if (document.activeElement === lastFocusable) {
-        e.preventDefault();
-        firstFocusable.focus();
-      }
+      if (document.activeElement === lastFocusable) { e.preventDefault(); firstFocusable.focus(); }
     }
   }
 
-  // inicialização
   try {
     if (!hasValidConsent()) {
       openDialog();
     } else {
-      // já aceitou
-      overlay.setAttribute('aria-hidden', 'true');
-      dialog.setAttribute('hidden', 'true');
+      if (overlay) overlay.setAttribute('aria-hidden', 'true');
+      if (dialog) dialog.setAttribute('hidden', 'true');
     }
   } catch (err) {
     console.error('Consent init error', err);
   }
+
+  window.__privacyBanner = { show: openDialog, hide: closeDialog, reset: () => { localStorage.removeItem(STORAGE_KEY); openDialog(); } };
 });
