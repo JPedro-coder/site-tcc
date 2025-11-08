@@ -2,10 +2,30 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Pousada Casa da Lua</title>
     <link rel="icon" href="imagens/Logohotel.png" />
+
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://vlibras.gov.br https://app.vlibras.gov.br https://www.vlibras.gov.br https://www.google.com https://maps.googleapis.com ;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data: https:;
+    img-src 'self' data: https:;
+    frame-src https://www.google.com https://maps.google.com https://vlibras.gov.br https://app.vlibras.gov.br https://player.vlibras.gov.br;
+    connect-src 'self' https://vlibras.gov.br https://app.vlibras.gov.br https://dicionario2.vlibras.gov.br https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+    worker-src 'self' blob:;
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+  "
+/>
+
+    <meta name="referrer" content="no-referrer-when-downgrade" />
 
     <!-- Bootstrap 5 CSS -->
     <link
@@ -16,11 +36,20 @@
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity=""
+      crossorigin="anonymous"
     />
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Open+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- CSS Customizado -->
     <link rel="stylesheet" type="text/css" href="css/estilo.css" />
@@ -39,6 +68,9 @@
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#nav-principal"
+            aria-controls="nav-principal"
+            aria-expanded="false"
+            aria-label="Alternar navegação"
           >
             <i class="fas fa-bars text-dark"></i>
           </button>
@@ -71,7 +103,8 @@
               </li>
               <li class="nav-item">
                 <a href="localizacao.html" class="nav-link active"
-                  >Localização</a>
+                  >Localização</a
+                >
               </li>
             </ul>
           </div>
@@ -86,55 +119,66 @@
         <div class="row align-items-center">
           <!-- Coluna de texto -->
           <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
-            <h3 class="titulo_quartos"">
+            <h3 class="titulo_quartos" id="Cidade">
               Apenas a cinco minutos do centro da Cidade
             </h3>
             <p class="text-justify mb-4" style="font-size: 1.2em">
               Localizada em meio ao aconchegante vilarejo de Serra da Harmonia,
-              nossa pousada está estrategicamente situada entre montanhas verdejantes e o brilho sereno de um lago cristalino.
-               É o refúgio perfeito para quem busca descanso, romantismo ou momentos de conexão com a natureza.
-              A poucos passos da pousada, os hóspedes encontram trilhas leves que levam a miradouros inesquecíveis, feirinhas
-              de artesanato local e restaurantes típicos que celebram a culinária regional. Para quem prefere atividades culturais, a charmosa praça central
-              recebe apresentações musicais aos finais de semana, além de exposições de arte de artistas locais.
+              nossa pousada está estrategicamente situada entre montanhas
+              verdejantes e o brilho sereno de um lago cristalino. É o refúgio
+              perfeito para quem busca descanso, romantismo ou momentos de
+              conexão com a natureza. A poucos passos da pousada, os hóspedes
+              encontram trilhas leves que levam a miradouros inesquecíveis,
+              feirinhas de artesanato local e restaurantes típicos que celebram
+              a culinária regional. Para quem prefere atividades culturais, a
+              charmosa praça central recebe apresentações musicais aos finais de
+              semana, além de exposições de arte de artistas locais.
             </p>
 
-            <h4 class="titulo_h id="Cidade">
+            <h4 class="titulo_h">
               Serra da Harmonia, uma das mais acolhedoras cidades do Brasil
             </h4>
             <p class="text-justify" style="font-size: 1.2em">
-              Nossa pousada, porém, vai além do encanto natural. 
-              Foi cuidadosamente projetada para acolher todos os visitantes com conforto e dignidade, oferecendo rampas de acesso,
-               corredores amplos, banheiros adaptados e recursos tecnológicos como o VLibras, que garante acessibilidade digital para 
-               pessoas com deficiência auditiva. Aqui, a experiência de bem-estar e hospitalidade é inclusiva por essência.
-              Seja para relaxar em nossas suítes aconchegantes, apreciar o pôr do sol à beira do lago ou viver novas histórias entre amigos e familiares,
-              a Pousada Lua Serena é um convite para se sentir em casa, cercado de beleza, cultura e respeito à diversidade.
+              Nossa pousada, porém, vai além do encanto natural. Foi
+              cuidadosamente projetada para acolher todos os visitantes com
+              conforto e dignidade, oferecendo rampas de acesso, corredores
+              amplos, banheiros adaptados e recursos tecnológicos como o
+              VLibras, que garante acessibilidade digital para pessoas com
+              deficiência auditiva. Aqui, a experiência de bem-estar e
+              hospitalidade é inclusiva por essência. Seja para relaxar em
+              nossas suítes aconchegantes, apreciar o pôr do sol à beira do lago
+              ou viver novas histórias entre amigos e familiares, a Pousada Lua
+              Serena é um convite para se sentir em casa, cercado de beleza,
+              cultura e respeito à diversidade.
             </p>
           </div>
 
           <!-- Coluna de imagem -->
-          <div class="col-lg-6 col-md-6  img-cidade">
-            <img src="./imagens/cidade.jpg"alt="Cidade Serra da Harmonia"class="img-fluid rounded shadow"/>
+          <div class="col-lg-6 col-md-6 img-cidade">
+            <img
+              src="./imagens/cidade.jpg"
+              alt="Cidade Serra da Harmonia"
+              class="img-fluid rounded shadow"
+            />
           </div>
         </div>
       </div>
 
-      <!-- VLibras Plugin -->
-<div vw class="enabled">
-  <div vw-access-button class="active"></div>
-  <div vw-plugin-wrapper>
-    <div class="vw-plugin-top-wrapper"></div>
-  </div>
-</div>
-<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-<script>
-  new window.VLibras.Widget('https://vlibras.gov.br/app');
-</script>
+      <!-- VLibras Plugin: botão será injetado pelo script -->
+      <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <!-- Note: o script do VLibras é carregado abaixo com defer; a inicialização é feita em js/main-secure.js -->
+    </section>
     <!-- Fim seção Encontre-nos -->
 
     <!-- Seção Mapa -->
     <section class="bg-light py-5">
       <div class="container">
-        <h3 class="titulo_quartos" id="Mapa"">
+        <h3 class="titulo_quartos" id="Mapa">
           Para nos encontrar é fácil <i class="fas fa-map-marked-alt ms-2"></i>
         </h3>
 
@@ -144,54 +188,113 @@
             style="border: 4px solid #10421e"
             allowfullscreen
             loading="lazy"
+            title="Mapa — Pousada Casa na Lua"
           ></iframe>
         </div>
       </div>
     </section>
     <!-- Fim Seção Mapa -->
 
-   
-<!-- Seção de Consentimento de Privacidade -->
-<section id="consent-section" aria-hidden="true">
-  <div id="consent-overlay" class="consent-overlay" tabindex="-1" aria-hidden="true"></div>
+    <!-- Seção de Consentimento de Privacidade -->
+    <section id="consent-section" aria-hidden="true">
+      <div
+        id="consent-overlay"
+        class="consent-overlay"
+        tabindex="-1"
+        aria-hidden="true"
+      ></div>
 
-  <div id="consent-dialog" class="consent-dialog" role="dialog" aria-modal="true" aria-labelledby="consent-title" hidden>
-    <button class="consent-close" aria-label="Fechar painel de consentimento">&times;</button>
+      <div
+        id="consent-dialog"
+        class="consent-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="consent-title"
+        hidden
+        aria-hidden="true"
+      >
+        <button
+          class="consent-close"
+          aria-label="Fechar painel de consentimento"
+        >
+          &times;
+        </button>
 
-    <div class="consent-body">
-      <h3 id="consent-title">Política de Privacidade</h3>
-      <p id="consent-desc">
-        Antes de continuar, por favor leia e confirme que tomou ciência da nossa Política de Privacidade.
-      </p>
+        <div class="consent-body">
+          <h3 id="consent-title">Política de Privacidade</h3>
+          <p id="consent-desc">
+            Antes de continuar, por favor leia e confirme que tomou ciência da
+            nossa Política de Privacidade.
+          </p>
 
-      <div class="consent-actions">
-        <a href="privacidade.html" target="_blank" rel="noopener" class="btn btn-outline-secondary me-2">Ler Política</a>
-        <button id="consent-accept" class="btn btn-danger">Li e concordo</button>
+          <div class="consent-actions">
+            <a
+              href="privacidade.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-outline-secondary me-2"
+              >Ler Política</a
+            >
+            <button id="consent-accept" class="btn btn-danger">
+              Li e concordo
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-  <footer class="bg-dark text-center py-5"><!------- Início do Rodapé ----------->
-    <div class="container">
-      <h5 class="mb-3">Siga-nos em nossas redes sociais</h5>
-      <div class="d-flex justify-content-center gap-4">
-        <a href="#" target="_blank" aria-label="WhatsApp" style="color: forestgreen;"">
-          <i class="fab fa-whatsapp fa-2x"></i>
-        </a>
-        <a href="#" target="_blank" aria-label="Instagram" style="color: purple"">
-          <i class="fab fa-instagram fa-2x"></i>
-        </a>
-        <a href="#" target="_blank" aria-label="Facebook" style="color: blue"">
-          <i class="fab fa-facebook fa-2x"></i>
-        </a>
+    <footer class="bg-dark text-center py-5">
+      <!------- Início do Rodapé ----------->
+      <div class="container">
+        <h5 class="mb-3">Siga-nos em nossas redes sociais</h5>
+        <div class="d-flex justify-content-center gap-4">
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            style="color: forestgreen"
+          >
+            <i class="fab fa-whatsapp fa-2x"></i>
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            style="color: purple"
+          >
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            style="color: blue"
+          >
+            <i class="fab fa-facebook fa-2x"></i>
+          </a>
+        </div>
+        <p class="mb-0 text-center footer_2025">
+          © 2025 <strong>Pousada Casa da Lua</strong> – Todos os direitos
+          reservados
+        </p>
       </div>
-      <p class="mb-0 text-center footer_2025">© 2025 <strong>Pousada Casa da Lua</strong> – Todos os direitos reservados</p>
-    </div>
-  </footer><!------- Fim do Rodapé ----------->
+    </footer>
+    <!------- Fim do Rodapé ----------->
 
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- VLibras (carregado via CDN, inicialização feita em js/main-secure.js) -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js" defer></script>
+
+    <!-- Scripts do projeto (inicialização segura e consentimento) -->
+    <script src="js/main-secure.js" defer></script>
     <script src="js/privacy-consent.js" defer></script>
+
+    <!-- Bootstrap 5 JS (defer já no bundle) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
   </body>
 </html>

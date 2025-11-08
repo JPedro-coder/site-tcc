@@ -6,23 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- segurança (meta)-->
-    <meta http-equiv="Content-Security-Policy"
+    <meta
+      http-equiv="Content-Security-Policy"
       content="
-         default-src 'self';
-    script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com 
-    https://vlibras.gov.br https://app.vlibras.gov.br 
-    https://www.google.com https://maps.googleapis.com;
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net 
-    https://cdnjs.cloudflare.com https://vlibras.gov.br;
-    font-src 'self' https://fonts.gstatic.com data: https:;
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://vlibras.gov.br https://app.vlibras.gov.br https://www.vlibras.gov.br https://www.google.com https://maps.googleapis.com ;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data: https:;
     img-src 'self' data: https:;
-    frame-src https://www.google.com https://maps.google.com https://vlibras.gov.br https://app.vlibras.gov.br;
-    connect-src 'self' https://vlibras.gov.br https://app.vlibras.gov.br https://cdn.jsdelivr.net;
+    frame-src https://www.google.com https://maps.google.com https://vlibras.gov.br https://app.vlibras.gov.br https://player.vlibras.gov.br;
+    connect-src 'self' https://vlibras.gov.br https://app.vlibras.gov.br https://dicionario2.vlibras.gov.br https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+    worker-src 'self' blob:;
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-      ">
+  "
+/>
 
     <meta name="referrer" content="no-referrer-when-downgrade">
 
